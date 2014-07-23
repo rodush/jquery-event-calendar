@@ -1,0 +1,7 @@
+@import "calendar";
+
+#events_calendar {
+  // This is to restrict datepicker's header block width the same as dates table width.
+  // It is possible to remove Play with paddings in 
+  float: left;
+}

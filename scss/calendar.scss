@@ -1,0 +1,152 @@
+$calendar-title-color: #c30513;
+$calendar-bg: #F2F3F3;
+$calendar-border-color: #E2E3E3;
+$calendar-current-day-bg: #F0E7E8;
+$calendar-event-day-bg: #EBD0D2;
+
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker th {
+  border-collapse: collapse;
+}
+.ui-datepicker {
+  table {
+    border: 1px solid transparent;
+  }
+}
+
+.ui-datepicker td {
+  background-color: $calendar-bg;
+  border-color: $calendar-border-color;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.ui-datepicker-header {
+  position: relative;
+  padding: 20px 0;
+  border: 1px solid $calendar-border-color;
+}
+
+.ui-datepicker-title {
+  font-family: RobotoCondensed;
+  color: $calendar-title-color;
+  font-size: 1.13em;
+  font-weight: 700;
+  line-height: 1.128;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ui-datepicker-month {
+  position: relative;
+  
+  &:after {
+    content: ", ";
+  }
+}
+
+.ui-datepicker-calendar {
+  thead {
+    th {
+      font-family: Roboto;
+      color: rgba(100, 80, 79, 0.55);
+      font-size: 0.88em;
+      font-weight: 500;
+      text-transform: uppercase;      
+      text-align: center;      
+    }
+  }
+  tbody {
+    td {
+      padding: 5px 15px;
+      text-align: center;      
+      a.ui-state-default {
+        font-family: Roboto;
+        color: #64504f;
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 2.5;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  position: absolute;
+  top: 0px;
+  padding: 22px 25px;
+  cursor: pointer;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: $calendar-border-color;
+}
+
+.ui-datepicker-prev {
+  left: 0;
+  border-left-width: 0;
+}
+
+.ui-datepicker-next {
+  right: 0;
+  border-right-width: 0;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next{
+  span {
+    display: block;
+    width: 10px;
+    height: 16px;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+  }
+}
+
+// TODO: Convert arrows to sprite and then use with background offset
+.ui-datepicker-prev span {
+  background-image: url(../img/prev_arrow.png);
+}
+
+.ui-datepicker-next span {
+  background-image: url(../img/next_arrow.png);
+}
+
+/*
+.ui-datepicker-prev span { background-position: 0px 0px; }
+.ui-datepicker-next span { background-position: -5px 0px; }
+.ui-datepicker-prev-hover span { background-position: 0px -10px; }
+.ui-datepicker-next-hover span { background-position: -5px -10px; }
+*/
+
+
+.ui-datepicker-other-month {
+  color: rgba(100, 80, 79, 0.35);
+}
+
+.ui-datepicker-today {
+  background-color: $calendar-current-day-bg !important;
+}
+
+.has-event {
+  position: relative;
+  a {
+    // create pseudo element to mark an event within day
+    &:after {
+      display: block;
+      position: absolute;
+      top: 73%;
+      left: 50%;
+      margin-left: -5px;
+      width: 10px;
+      height: 10px;
+      content: " ";
+      background-color: $calendar-event-day-bg;
+      border-radius: 50%;
+    }
+  }
+}
